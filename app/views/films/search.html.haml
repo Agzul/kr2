@@ -1,0 +1,34 @@
+%h1 Search
+
+=form_tag search_films_path(), method: :get do
+  %b Film name:
+  =text_field_tag 'search[name]', params['search']['name'], id: 'film_name'
+  %br
+  %b Film companies:
+  =select_tag 'search[company]', options_for_select(@film_companies.collect{ |t| t.name }), :include_blank => true
+  %br
+  %b Director name:
+  =text_field_tag 'search[director]', params['search']['director'], id: 'director_name'
+  %br
+  %b Description:
+  =text_field_tag 'search[description]', params['search']['description']
+  %br
+  =submit_tag 'Search'
+
+%br
+=link_to 'Clear inputs of film', '', id: 'clear'
+
+- if @films
+  %table
+    %thead
+      %tr
+        %th Film name
+        %th Film year
+        %th Film director
+    %tbody
+    - @films.each do |film|
+      %tr
+        %td= film.name
+        %td= film.year
+        %td= film.director
+%br

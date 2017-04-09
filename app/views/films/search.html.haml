@@ -20,15 +20,15 @@
 
 - if @films
   %table
-    %thead
-      %tr
-        %th Film name
-        %th Film year
-        %th Film director
-    %tbody
     - @films.each do |film|
-      %tr
-        %td= film.name
-        %td= film.year
-        %td= film.director
-%br
+      %thead
+        %tr
+          %th Film name
+          %th Film year
+          %th Film director
+      %tbody
+        %tr
+          %td= film.name
+          %td= film.year
+          %td= film.director
+    %br

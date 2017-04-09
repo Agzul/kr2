@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Film name:
+  = @description.film.name
+%p
+  %b Description:
+  = @description.description
+%p
+  %b Keywords:
+  = @description.keywords
+
+= link_to 'Edit', edit_description_path(@description)
+\|
+= link_to 'Back', descriptions_path

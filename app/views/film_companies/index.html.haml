@@ -1,0 +1,23 @@
+%h1 Listing film_companies
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Country
+      %th
+      %th
+      %th
+
+  %tbody
+    - @film_companies.each do |film_company|
+      %tr
+        %td= film_company.name
+        %td= film_company.country
+        %td= link_to 'Show', film_company
+        %td= link_to 'Edit', edit_film_company_path(film_company)
+        %td= link_to 'Destroy', film_company, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Film company', new_film_company_path

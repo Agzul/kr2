@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @film.name
+%p
+  %b Year:
+  = @film.year
+%p
+  %b Director:
+  = @film.director
+%p
+  %b Film company name:
+  = @film.film_company.name
+
+= link_to 'Edit', edit_film_path(@film)
+\|
+= link_to 'Back', films_path

@@ -1,0 +1,25 @@
+%h1 Listing descriptions
+
+%table
+  %thead
+    %tr
+      %th Film name
+      %th Description
+      %th Keywords
+      %th
+      %th
+      %th
+
+  %tbody
+    - @descriptions.each do |description|
+      %tr
+        %td= description.film.name
+        %td= description.description
+        %td= description.keywords
+        %td= link_to 'Show', description
+        %td= link_to 'Edit', edit_description_path(description)
+        %td= link_to 'Destroy', description, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Description', new_description_path

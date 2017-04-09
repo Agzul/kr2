@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @film_company.name
+%p
+  %b Country:
+  = @film_company.country
+
+= link_to 'Edit', edit_film_company_path(@film_company)
+\|
+= link_to 'Back', film_companies_path
